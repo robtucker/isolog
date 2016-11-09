@@ -1,0 +1,23 @@
+{
+  "name": "isolog",
+  "version": "0.0.1",
+  "description": "JS logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robtucker/isolog.git"
+  },
+  "keywords": [
+    "js",
+    "logger"
+  ],
+  "author": "Robert Tucker <rob@coderlab.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robtucker/isolog/issues"
+  },
+  "homepage": "https://github.com/robtucker/isolog#readme"
+}
