@@ -8,11 +8,10 @@ export abstract class BaseHandler implements HandlerInterface {
 
     private _logLevel: number;
 
-    constructor(config: HandlerConfig) {
-
-        this._logLevel = config.LOG_LEVEL || 100;
-
-        this._levels = config.LEVELS || defaultLevels;
+    constructor(config?: HandlerConfig) {
+        this._logLevel = config && config.LOG_LEVEL ? config.LOG_LEVEL : 100;
+        
+        this._levels = config && config.LEVELS ? config.LEVELS : defaultLevels;
     }
 
     private _isLoggble (level: string): boolean {

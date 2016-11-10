@@ -1,12 +1,16 @@
 import { HandlerInterface } from "./interfaces";
+import { ConsoleHandler } from './handlers';
 
-export class Logger {
+export class Isolog {
 
-    private _handlers: HandlerInterface[];
+    private _handlers: HandlerInterface[] = [];
 
-    constructor(handlers: HandlerInterface[]) {
-        
-        this._handlers = handlers;
+    constructor(handlers?: HandlerInterface[]) {
+        if(handlers) {
+            handlers.forEach((handler) => {
+                this.addHandler(handler);
+            });
+        }
     }
 
     addHandler(handler: HandlerInterface) {
@@ -35,3 +39,5 @@ export class Logger {
         this.log(data, 'error');
     }
 }
+
+export const Logger = new Isolog();

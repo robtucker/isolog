@@ -18,7 +18,7 @@ var randomStr = () => {
 
 describe('LogHandler', function() {
 
-    describe("isLoggable", function() {
+    describe("Handle method", function() {
 
         it('should have a configurable log level', function() {
             let testLevel = 300;

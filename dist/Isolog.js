@@ -1,7 +1,13 @@
 "use strict";
 var Isolog = (function () {
     function Isolog(handlers) {
-        this._handlers = handlers;
+        var _this = this;
+        this._handlers = [];
+        if (handlers) {
+            handlers.forEach(function (handler) {
+                _this.addHandler(handler);
+            });
+        }
     }
     Isolog.prototype.addHandler = function (handler) {
         this._handlers.push(handler);

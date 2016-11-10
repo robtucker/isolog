@@ -1,7 +1,7 @@
 ###Installation
 
 ```
-npm install -save-dev isolog
+npm install --save-dev isolog
 ```
 
 ###Usage
@@ -9,7 +9,7 @@ npm install -save-dev isolog
 First one or more handlers must be added to the Logger. 
 
 ```
-import { Logger, ConsoleHandler } from isolog;
+import { Logger, ConsoleHandler } from "isolog";
 
 config = {LOG_LEVEL: 200};
 

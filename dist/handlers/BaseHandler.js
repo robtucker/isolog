@@ -2,8 +2,8 @@
 var defaults_1 = require("../config/defaults");
 var BaseHandler = (function () {
     function BaseHandler(config) {
-        this._logLevel = config.LOG_LEVEL || 100;
-        this._levels = config.LEVELS || defaults_1.defaultLevels;
+        this._logLevel = config && config.LOG_LEVEL ? config.LOG_LEVEL : 100;
+        this._levels = config && config.LEVELS ? config.LEVELS : defaults_1.defaultLevels;
     }
     BaseHandler.prototype._isLoggble = function (level) {
         return this._levels[level] >= this._logLevel;

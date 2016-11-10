@@ -2,5 +2,6 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(require("./Logger"));
+__export(require("./Isolog"));
 __export(require("./handlers"));
+__export(require("./config/defaults"));
