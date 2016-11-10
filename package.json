@@ -1,10 +1,12 @@
 {
   "name": "isolog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JS logger",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --opts mocha.opts"
+    "start": "npm run test",
+    "test": "mocha --opts mocha.opts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,11 @@
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
+    "@types/colors": "^0.6.33",
     "@types/mocha": "^2.2.32",
     "@types/sinon": "^1.16.31",
     "chai": "^3.5.0",
+    "colors": "^1.1.2",
     "mocha": "^3.1.2",
     "sinon": "^2.0.0-pre.4",
     "ts-node": "^1.7.0",

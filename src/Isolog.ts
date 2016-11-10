@@ -38,6 +38,10 @@ export class Isolog {
     error(data: any) {
         this.log(data, 'error');
     }
+
+    critical(data: any) {
+        this.log(data, 'critical');
+    }
 }
 
 export const Logger = new Isolog();

@@ -1,3 +1,5 @@
+import * as colors from "colors";
+
 import { expect } from "chai";
 
 import { Logger, BaseHandler, defaultLevels } from "../src";
@@ -16,12 +18,13 @@ var randomStr = () => {
 }
 
 
-describe('LogHandler', function() {
+describe('Handlers', function() {
 
-    describe("Handle method", function() {
+    describe("TestHandler", function() {
 
-        it('should have a configurable log level', function() {
-            let testLevel = 300;
+        var testLevels = (testLevel: number) => {
+            console.log(`Testing LOG_LEVEL of ${testLevel}`.cyan);
+
             var handler = new TestHandler({LOG_LEVEL: testLevel});
 
             Object.keys(defaultLevels).forEach((level=>{
@@ -29,7 +32,7 @@ describe('LogHandler', function() {
                 var s = spy();
                 handler.log(s, level);
 
-                console.log(`${level} has call count of ${s.callCount}`)
+                console.log(`${level} has call count of ${s.callCount}`.yellow)
 
                 if(defaultLevels[level] >= testLevel) {
                     
@@ -38,7 +41,13 @@ describe('LogHandler', function() {
                     expect(s.callCount).to.equal(0);
                 }
             }))
+        }
+        
+        it('should have a configurable log level', function() {
 
+            Object.keys(defaultLevels).forEach((key) => {
+                testLevels(defaultLevels[key]);
+            })
         });
 
 

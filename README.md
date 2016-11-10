@@ -11,7 +11,7 @@ First one or more handlers must be added to the Logger.
 ```
 import { Logger, ConsoleHandler } from "isolog";
 
-config = {LOG_LEVEL: 200};
+var config = {LOG_LEVEL: 200};
 
 var handler = new ConsoleHandler(config);
 
@@ -21,14 +21,16 @@ Logger.addHandler(handler);
 
 Each handler accepts a configration object which will typically contain a LOG_LEVEL property. If no LOG_LEVEL is provided then it will default to 100;
 
-Then one of the log methods can be invoked:
+Subsequent modules can simply import the logger and invoke one of the 5 methods:
 
 ```
-Logger.debug('foo');
-Logger.info('foo');
-Logger.warn('foo');
-Logger.error('foo');
-Logger.critical('foo');
+import { Logger } from "isolog";
+
+Logger.debug('debug');
+Logger.info('info');
+Logger.warn('warn');
+Logger.error('error');
+Logger.critical('critical');
 ```
 
 Data will only be logged if the method invoked exceeds the level set on the handler.
