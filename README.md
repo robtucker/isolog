@@ -8,10 +8,8 @@ npm install -save-dev isolog
 
 First one or more handlers must be added to the Logger. 
 
-Each handler accepts a configration object which will typically contain a LOG_LEVEL property. If no LOG_LEVEL is provided then it will default to 100;
-
 ```
-import { Logger, ConsoleHandler } from isolog
+import { Logger, ConsoleHandler } from isolog;
 
 config = {LOG_LEVEL: 200};
 
@@ -20,6 +18,9 @@ var handler = new ConsoleHandler(config);
 Logger.addHandler(handler);
 
 ```
+
+Each handler accepts a configration object which will typically contain a LOG_LEVEL property. If no LOG_LEVEL is provided then it will default to 100;
+
 Then one of the log methods can be invoked:
 
 ```
@@ -30,7 +31,7 @@ Logger.error('foo');
 Logger.critical('foo');
 ```
 
-Data will only be logged if the method invoked exceeds the level set on the handler it will be logged.
+Data will only be logged if the method invoked exceeds the level set on the handler.
 
 The default log levels are:
 
@@ -46,6 +47,6 @@ The default log levels are:
 
 It's possible to override these on a per handler basis by passing in a LEVELS object as a property on the configuration object.
 
-###HCustom handlers
+###Custom handlers
 
-A valid handler must extend the BaseHandler and implement the handle method: `handle (data: any)`
+A valid handler must extend the BaseHandler and implement the handle method: `abstract handle (data: any): void`
