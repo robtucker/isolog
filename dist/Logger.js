@@ -27,4 +27,3 @@ var Logger = (function () {
     return Logger;
 }());
 exports.Logger = Logger;
-//# sourceMappingURL=Logger.js.map

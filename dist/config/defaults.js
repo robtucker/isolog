@@ -6,4 +6,3 @@ exports.defaultLevels = {
     error: 400,
     critical: 500
 };
-//# sourceMappingURL=defaults.js.map

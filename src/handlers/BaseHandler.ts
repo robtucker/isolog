@@ -8,7 +8,7 @@ export abstract class BaseHandler implements HandlerInterface {
 
     private _logLevel: number;
 
-    private _configure(config: HandlerConfig): void {
+    constructor(config: HandlerConfig) {
 
         this._logLevel = config.LOG_LEVEL || 100;
 

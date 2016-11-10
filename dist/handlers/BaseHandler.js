@@ -1,12 +1,10 @@
 "use strict";
 var defaults_1 = require("../config/defaults");
 var BaseHandler = (function () {
-    function BaseHandler() {
-    }
-    BaseHandler.prototype._configure = function (config) {
+    function BaseHandler(config) {
         this._logLevel = config.LOG_LEVEL || 100;
         this._levels = config.LEVELS || defaults_1.defaultLevels;
-    };
+    }
     BaseHandler.prototype._isLoggble = function (level) {
         return this._levels[level] >= this._logLevel;
     };
@@ -18,4 +16,3 @@ var BaseHandler = (function () {
     return BaseHandler;
 }());
 exports.BaseHandler = BaseHandler;
-//# sourceMappingURL=BaseHandler.js.map

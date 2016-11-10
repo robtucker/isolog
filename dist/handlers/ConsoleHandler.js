@@ -16,4 +16,3 @@ var ConsoleHandler = (function (_super) {
     return ConsoleHandler;
 }(BaseHandler_1.BaseHandler));
 exports.ConsoleHandler = ConsoleHandler;
-//# sourceMappingURL=ConsoleHandler.js.map
