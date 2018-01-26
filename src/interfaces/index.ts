@@ -1,3 +1,3 @@
-export * from "./HandlerConfig";
-export * from "./HandlerInterface";
-export * from "./LogLevels";
+export * from "./handler-config";
+export * from "./handler-interface";
+export * from "./log-levels";

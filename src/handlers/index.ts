@@ -1,2 +1,2 @@
-export * from "./BaseHandler";
-export * from "./ConsoleHandler";
+export * from "./base-handler";
+export * from "./console-handler";
