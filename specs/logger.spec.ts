@@ -10,9 +10,7 @@ describe('Isolog', () => {
             const handler = new MockHandler({ LOG_LEVEL: 100 })
             const logger = new Isolog(handler)
             const mock = jest.fn()
-            console.log('TESTING FUNCTION ', key, logger[key])
             logger[key](mock)
-            console.log('MOCKED', mock.mock.calls)
             expect(mock).toHaveBeenCalled()
         })
 

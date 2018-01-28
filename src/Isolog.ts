@@ -45,8 +45,7 @@ export class Isolog {
 // export the logger
 export const logger = new Isolog(new ConsoleHandler())
 
-
-// export logger's public methods as free functions
+// export the logger's public methods as free functions
 export const debug = logger.debug
 export const info = logger.info
 export const warn = logger.warn

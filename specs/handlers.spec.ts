@@ -21,11 +21,8 @@ const testLevels = (testLevel: LogLevel) => {
 describe('Handlers', () => {
 
         it('should have a configurable log level', () => {
-            // Object.keys(defaultLevels).forEach((key) => {
-            //     testLevels(defaultLevels[key])
-            // })
-
-
+            Object.keys(defaultLevels).forEach((key) => {
+                testLevels(defaultLevels[key])
+            })
         })
-
 })

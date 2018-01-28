@@ -4,6 +4,7 @@
   "description": "JS logger",
   "main": "index.js",
   "scripts": {
+    "coverage": "jest --coverage",
     "start": "npm run test",
     "test": "jest",
     "build": "tsc"
