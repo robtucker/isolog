@@ -1,4 +1,4 @@
-import { LogLevels } from "../interfaces";
+import { LogLevels } from "../interfaces"
 
 export const defaultLevels: LogLevels =  {
     debug: 100,
@@ -6,4 +6,4 @@ export const defaultLevels: LogLevels =  {
     warn: 300,
     error: 400,
     critical: 500
-};
+}

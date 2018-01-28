@@ -1,11 +1,11 @@
 {
   "name": "isolog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JS logger",
   "main": "index.js",
   "scripts": {
     "start": "npm run test",
-    "test": "mocha --opts mocha.opts",
+    "test": "jest",
     "build": "tsc"
   },
   "repository": {
@@ -23,18 +23,42 @@
   },
   "homepage": "https://github.com/robtucker/isolog#readme",
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.16.6"
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/colors": "^0.6.33",
-    "@types/mocha": "^2.2.32",
+    "@types/faker": "^4.1.2",
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/jest": "^22.1.0",
     "@types/sinon": "^1.16.31",
     "chai": "^3.5.0",
     "colors": "^1.1.2",
+    "jest": "^22.1.4",
     "mocha": "^3.1.2",
     "sinon": "^2.0.0-pre.4",
+    "ts-jest": "^22.0.1",
     "ts-node": "^1.7.0",
     "typescript": "^2.0.8"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src/app"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/mocks/file.js",
+      "\\.(scss|css|less)$": "identity-obj-proxy"
+    }
   }
 }

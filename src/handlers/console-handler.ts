@@ -1,8 +1,8 @@
-import { BaseHandler } from "./BaseHandler";
+import { BaseHandler } from "./base-handler"
 
 export class ConsoleHandler extends BaseHandler {
 
-    handle(data: any) {
-        console.log(data);
+    handle(args: any[]) {
+        console.log(...args)
     }
 }

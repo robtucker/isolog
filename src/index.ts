@@ -1,3 +1,4 @@
-export * from "./Isolog";
-export * from "./handlers";
-export * from "./config/defaults";
+export * from "./isolog"
+export * from "./handlers"
+export * from "./interfaces"
+export * from "./config/defaults"

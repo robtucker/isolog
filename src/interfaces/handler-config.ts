@@ -1,7 +1,7 @@
-import { LogLevels } from "./log-levels";
+import { LogLevels, LogLevel } from "./log-levels"
 
 export interface HandlerConfig {
-
-    LOG_LEVEL: number;
+    LOG_LEVEL: LogLevel
     LEVELS?: LogLevels
-};
+}
+

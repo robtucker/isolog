@@ -1,7 +1,12 @@
+export type LogLevel = 100 | 200 | 300 | 400 | 500
+
 export interface LogLevels {
-    debug: number,
-    info: number,
-    warn: number,
-    error: number,
-    critical: number
-};
+    debug: LogLevel,
+    info: LogLevel,
+    warn: LogLevel,
+    error: LogLevel,
+    critical: LogLevel
+}
+
+export type Level = keyof LogLevels
+
