@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "jest --coverage",
+    "prepublishOnly": "npm test && rm -rf ./dist && npm run build",
     "start": "npm run test",
     "test": "jest",
     "build": "tsc"
