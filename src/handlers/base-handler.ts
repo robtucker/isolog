@@ -23,6 +23,6 @@ export abstract class BaseHandler implements HandlerInterface {
         }
     }
 
-    abstract handle (data: any[]): void
+    abstract handle (args: any[]): void
 
 }

@@ -1,43 +1,62 @@
-###Installation
+# isolog
 
-```
+Typescript logger.
+
+### Usage
+
+```bash
 npm install --save-dev isolog
 ```
 
-###Usage
+You can import a logger instance:
 
-First one or more handlers must be added to the Logger. 
+```typescript
+import { logger } from "isolog";
 
-```
-import { Logger, ConsoleHandler } from "isolog";
-
-var config = {LOG_LEVEL: 200};
-
-var handler = new ConsoleHandler(config);
-
-Logger.addHandler(handler);
-
+logger.debug('debug');
+logger.info('info');
+logger.warn('warn');
+logger.error('error');
+logger.critical('critical');
 ```
 
-Each handler accepts a configration object which will typically contain a LOG_LEVEL property. If no LOG_LEVEL is provided then it will default to 100;
+Or you can use free functions
 
-Subsequent modules can simply import the logger and invoke one of the 5 methods:
-
+```typescript
+import { debug, info, warn, error, critical } from 'isolog'
 ```
-import { Logger } from "isolog";
 
-Logger.debug('debug');
-Logger.info('info');
-Logger.warn('warn');
-Logger.error('error');
-Logger.critical('critical');
+### Handlers
+
+
+Custom handlers can be added to the logger instance using the addHandler method:
+
+```typescript
+import { logger, ConsoleHandler } from 'isolog'
+
+const customHandler = new ConsoleHandler();
+
+logger.addHandler(customHandler)
 ```
+
+
+It's also possible to construct a new Isolog instance with custom handlers as arguments to the constructor.
+
+```typescript
+import { Isolog, ConsoleHandler } from 'isolog'
+
+const customHandler = new ConsoleHandler();
+
+const loggerWithHandler = new Isolog(customHandler)
+```
+
+Each handler accepts a configration object which is unique to the handler but will typically contain a LOG_LEVEL property. If no LOG_LEVEL is provided then it will default to 100;
 
 Data will only be logged if the method invoked exceeds the level set on the handler.
 
 The default log levels are:
 
-```
+```typescript
 {
     debug: 100,
     info: 200,
@@ -51,4 +70,6 @@ It's possible to override these on a per handler basis by passing in a LEVELS ob
 
 ###Custom handlers
 
-A valid handler must extend the BaseHandler and implement the handle method: `abstract handle (data: any): void`
+A valid handler must extend the BaseHandler and implement the handle method: `abstract handle (data: any[]): void`
+
+The handle method accepts an array of args. The args come as an array, because there is an unknown number of them, including potentially 0.
